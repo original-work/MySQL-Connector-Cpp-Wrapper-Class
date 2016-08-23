@@ -44,6 +44,29 @@ MySQLConnWrapper::~MySQLConnWrapper()
 	delete con;
 }
 
+
+void MySQLConnWrapper::init(string h, string u, string p)
+{
+	host=h;
+	user=u;
+	password=p;
+}
+
+string MySQLConnWrapper::getHost()
+{
+	return host;
+}
+
+string MySQLConnWrapper::getUser()
+{
+	return user;
+}
+
+string MySQLConnWrapper::getPassword()
+{
+	return password;
+}
+
 void MySQLConnWrapper::manageException(sql::SQLException& e)
 {
 	if (e.getErrorCode() != 0){
@@ -107,9 +130,9 @@ void MySQLConnWrapper::execute(const string& query)
 	}
 }
 
-void MySQLConnWrapper::closePrepStmt()
+void MySQLConnWrapper::closeCon()
 {
-	prep_stmt->close();
+	con->close();
 }
 
 

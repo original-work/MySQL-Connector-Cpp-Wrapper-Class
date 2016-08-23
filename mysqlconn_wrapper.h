@@ -38,44 +38,43 @@ using namespace std;
 
 class MySQLConnWrapper
 {
-          
-    public:
-        
-        /* Your MySQL server settings */
-        MySQLConnWrapper()
-        {
-            host     = "tcp://127.0.0.1:11008";
-            user     = "root";
-            password = "fdjkd&wi278^@6DGHfyTF";
-        };
-        ~MySQLConnWrapper();
-        void manageException(sql::SQLException& e);
-        void connect();
-        void switchDb(const string& db_name);
-        void prepare(const string& query);
-        void setInt(const int& num, const int& data);
-        void setString(const int& num, const string& data);
-        void execute(const string& query = "");
-        bool fetch();
-	 sql::ResultSet* getRes();
-        string getString(const string& field);
-        string getString(const int& index);
-	 int getInt(const string& field);
-	 int getInt(const int& index);
- 	 void closePrepStmt();
+
+public:
+
+	/* Your MySQL server settings */
+	MySQLConnWrapper();
+	~MySQLConnWrapper();
+	void init(string h, string u, string p);
+	string getHost();
+	string getUser();
+	string getPassword();
+	void manageException(sql::SQLException& e);
+	void connect();
+	void switchDb(const string& db_name);
+	void prepare(const string& query);
+	void setInt(const int& num, const int& data);
+	void setString(const int& num, const string& data);
+	void execute(const string& query = "");
+	bool fetch();
+	sql::ResultSet* getRes();
+	string getString(const string& field);
+	string getString(const int& index);
+	int getInt(const string& field);
+	int getInt(const int& index);
+ 	 void closeCon();
 
 
 
-    private:
-        
-        string host;
-        string user;
-        string password;
-        sql::Driver* driver;
-        sql::Connection* con;
-        sql::Statement* stmt;
-        sql::PreparedStatement* prep_stmt;
-        sql::ResultSet* res;
+private:
+
+	string host;
+	string user;
+	string password;
+	sql::Driver* driver;
+	sql::Connection* con;
+	sql::Statement* stmt;
+	sql::PreparedStatement* prep_stmt;
+	sql::ResultSet* res;
 
 };
 

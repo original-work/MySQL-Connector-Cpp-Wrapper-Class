@@ -41,6 +41,7 @@ const std::string currentDateTime() {
 int main(int argc, char *argv[])
 {
 	MySQLConnWrapper db;
+	db.init("127.0.0.1", "root", "fdjkd&wi278^@6DGHfyTF");
 	db.connect();
 	db.switchDb("mihao");
 	db.prepare("INSERT INTO active_user(create_time, mdn, imsi, esn) VALUES (?, ?, ?, ?)");
@@ -67,7 +68,7 @@ int main(int argc, char *argv[])
 
 	//db.execute("select * from active_user where mdn=13301602770");
 	db.execute("select * from active_user");
-	db.closePrepStmt();
+	db.closeCon();
 	
 	while(db.fetch()){
 		string create_time=db.getString("create_time");
