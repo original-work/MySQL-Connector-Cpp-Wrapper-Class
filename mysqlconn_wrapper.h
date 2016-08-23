@@ -61,7 +61,8 @@ public:
 	string getString(const int& index);
 	int getInt(const string& field);
 	int getInt(const int& index);
- 	 void closeCon();
+ 	void closeCon();
+	void closePrepStmt();
 
 
 

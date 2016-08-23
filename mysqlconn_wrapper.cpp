@@ -139,6 +139,11 @@ void MySQLConnWrapper::closeCon()
 	con->close();
 }
 
+void MySQLConnWrapper::closePrepStmt()
+{
+	prep_stmt->close();
+}
+
 
 bool MySQLConnWrapper::fetch()
 {
