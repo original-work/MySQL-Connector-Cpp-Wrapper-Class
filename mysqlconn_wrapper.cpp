@@ -127,7 +127,7 @@ void MySQLConnWrapper::setString(const int& num, const string& data)
 	prep_stmt->setString(num, data);
 }
 
-void MySQLConnWrapper::executeQuery(const string& query)
+void MySQLConnWrapper::executeQ(const string& query)
 {
 	try {
 		if (query != "") {
@@ -141,7 +141,7 @@ void MySQLConnWrapper::executeQuery(const string& query)
 }
 
 
-void MySQLConnWrapper::executeUpdate(const string sql)
+void MySQLConnWrapper::executeAct(const string& sql)
 {
 	try {
 		if (query != "") {
