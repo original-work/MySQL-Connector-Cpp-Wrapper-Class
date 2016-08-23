@@ -70,8 +70,8 @@ int main(int argc, char *argv[])
 	char mdn[]="13301602770";
 	char sql[100];
 	sprintf(sql,"delete from active_user where mdn=%s",mdn);
-	string command=sql;
-	db.executeUpdate(command);
+	//string command=sql;
+	db.executeUpdate(sql);
 	//db.closePrepStmt();
 	db.closeCon();
 
