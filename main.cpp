@@ -52,31 +52,31 @@ int main(int argc, char *argv[])
 	db.setString(2,"13301602770");
 	db.setString(3, "6160761796");
 	db.setString(4, "80D8852E");
-	db.execute();
+	db.executeQuery();
 
 	db.setString(1,now);
 	db.setString(2,"13301605333");
 	db.setString(3, "0911785312");
 	db.setString(4, "0911785312");
-	db.execute();
+	db.executeQuery();
 
 	db.setString(1,now);
 	db.setString(2,"13301605371");
 	db.setString(3, "6301743459");
 	db.setString(4, "8094016C");
-	db.execute();
+	db.executeQuery();
 #endif
 
 	char mdn[]="13301602770";
 	char sql[100];
 	sprintf(sql,"delete from active_user where mdn=%s",mdn);
-	db.execute(sql);
+	db.executeUpdate(sql);
 	//db.closePrepStmt();
 	db.closeCon();
 
 #if 0
-	//db.execute("select * from active_user where mdn=13301602770");
-	db.execute("select * from active_user");
+	//db.executeQuery("select * from active_user where mdn=13301602770");
+	db.executeQuery("select * from active_user");
 	db.closeCon();
 
 
