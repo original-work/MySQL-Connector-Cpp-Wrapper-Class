@@ -10,7 +10,7 @@ SOURCE := $(wildcard *.cpp)
 OBJS := $(patsubst %.cpp,%.o,$(SOURCE))
 
 CC := g++
-CFLAGS := -std=c++11 -g -Wall -O3 -Wno-deprecated -fPIC -D _FILE_OFFSET_BITS=64 $(INCS) #-m64
+CFLAGS := -std=c++11 -ggdb -Wall -O3 -Wno-deprecated -fPIC -D _FILE_OFFSET_BITS=64 $(INCS) #-m64
 CXXFLAGS := $(CFLAGS)
 RM := rm -f
 
