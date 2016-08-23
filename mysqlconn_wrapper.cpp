@@ -49,16 +49,16 @@ MySQLConnWrapper::~MySQLConnWrapper()
 }
 
 
-void MySQLConnWrapper::init(string h, string u, string p)
+void MySQLConnWrapper::init(string url, string u, string p)
 {
-	host=h;
+	host_port=url;
 	user=u;
 	password=p;
 }
 
-string MySQLConnWrapper::getHost()
+string MySQLConnWrapper::getUrl()
 {
-	return host;
+	return host_port;
 }
 
 string MySQLConnWrapper::getUser()

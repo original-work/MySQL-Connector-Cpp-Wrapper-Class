@@ -44,8 +44,8 @@ public:
 	/* Your MySQL server settings */
 	MySQLConnWrapper();
 	~MySQLConnWrapper();
-	void init(string h, string u, string p);
-	string getHost();
+	void init(string url, string u, string p);
+	string getUrl();
 	string getUser();
 	string getPassword();
 	void manageException(sql::SQLException& e);
@@ -67,7 +67,7 @@ public:
 
 private:
 
-	string host;
+	string host_port;
 	string user;
 	string password;
 	sql::Driver* driver;
