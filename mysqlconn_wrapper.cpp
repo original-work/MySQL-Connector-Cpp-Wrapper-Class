@@ -141,7 +141,7 @@ void MySQLConnWrapper::executeQuery(const string& query)
 }
 
 
-void MySQLConnWrapper::executeUpdate(const string& sql)
+void MySQLConnWrapper::executeUpdate(const string sql)
 {
 	try {
 		if (query != "") {
