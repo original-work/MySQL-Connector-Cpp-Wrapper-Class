@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
 	sprintf(sql,"delete from active_user where mdn=%s",mdn);
 	db.execute(sql);
 	//db.closePrepStmt();
-	//db.closeCon();
+	db.closeCon();
 
 #if 0
 	//db.execute("select * from active_user where mdn=13301602770");

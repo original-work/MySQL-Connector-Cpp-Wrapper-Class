@@ -54,7 +54,8 @@ public:
 	void prepare(const string& query);
 	void setInt(const int& num, const int& data);
 	void setString(const int& num, const string& data);
-	void execute(const string& query = "");
+	void executeQuery(const string& query = "");
+	void MySQLConnWrapper::executeUpdate(const string& sql);
 	bool fetch();
 	sql::ResultSet* getRes();
 	string getString(const string& field);

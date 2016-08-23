@@ -55,6 +55,11 @@ void MySQLConnWrapper::init(string url, string u, string p)
 	host_port=url;
 	user=u;
 	password=p;
+	driver=NULL;
+	con=NULL;
+	stmt=NULL;
+	prep_stmt=NULL;
+	res=NULL;
 }
 
 string MySQLConnWrapper::getUrl()
@@ -122,7 +127,7 @@ void MySQLConnWrapper::setString(const int& num, const string& data)
 	prep_stmt->setString(num, data);
 }
 
-void MySQLConnWrapper::execute(const string& query)
+void MySQLConnWrapper::executeQuery(const string& query)
 {
 	try {
 		if (query != "") {
@@ -134,6 +139,20 @@ void MySQLConnWrapper::execute(const string& query)
 		manageException(e);
 	}
 }
+
+
+void MySQLConnWrapper::executeUpdate(const string& sql)
+{
+	try {
+		if (query != "") {
+			stmt->execute(query);
+		} 
+	} catch (sql::SQLException &e) {
+		manageException(e);
+	}
+}
+
+
 
 void MySQLConnWrapper::closeCon()
 {
