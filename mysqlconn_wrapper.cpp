@@ -86,7 +86,7 @@ void MySQLConnWrapper::connect()
 {
 	try{
 		driver = get_driver_instance();
-		con = driver->connect(host, user, password);
+		con = driver->connect(host_port, user, password);
 	} catch (sql::SQLException &e){
 		manageException(e);
 	}
