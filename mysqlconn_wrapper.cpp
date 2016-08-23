@@ -45,7 +45,6 @@ MySQLConnWrapper::~MySQLConnWrapper()
 	delete res;
 	delete prep_stmt;
 	delete stmt;
-	con->close();
 	delete con;
 }
 
