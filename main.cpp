@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 	db.execute();
 #endif
 
-	char mdn[]="13301605371";
+	char mdn[]="13301602770";
 	char sql[100];
 	sprintf(sql,"delete from active_user where mdn=%s",mdn);
 	db.execute(sql);
@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
 	//db.execute("select * from active_user where mdn=13301602770");
 	db.execute("select * from active_user");
 	db.closeCon();
-#endif
+
 
 	while(db.fetch()){
 		string create_time=db.getString("create_time");
@@ -89,6 +89,6 @@ int main(int argc, char *argv[])
 		string esn=db.getString(3);
 		printf("esn=%s\n", esn.c_str());
 	}
-	
+#endif	
 	return 0;
 }
