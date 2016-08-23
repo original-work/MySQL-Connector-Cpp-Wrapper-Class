@@ -36,6 +36,10 @@ yum install -y boost boost-devel boost-doc
 
 using namespace std;
 
+MySQLConnWrapper::MySQLConnWrapper()
+{
+} 
+
 MySQLConnWrapper::~MySQLConnWrapper()
 {
 	delete res;
