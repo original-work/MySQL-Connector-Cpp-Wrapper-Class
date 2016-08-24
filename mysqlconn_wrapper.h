@@ -55,7 +55,7 @@ public:
 	void setInt(const int& num, const int& data);
 	void setString(const int& num, const string& data);
 	void executeQuery(const string& query = "");
-	void executeUpdate(const string& sql);
+	void executeUpdate(const string& sql ="");
 	bool fetch();
 	sql::ResultSet* getRes();
 	string getString(const string& field);
