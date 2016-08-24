@@ -48,7 +48,9 @@ asked Dec 15 '14 at 9:18
 
 
 
-accepted
+accepted Answer
+===============
+
 Each of the three functions have a specific use, which can be guessed from their return type.
 
 execute
