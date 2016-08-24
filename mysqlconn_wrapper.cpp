@@ -145,7 +145,9 @@ void MySQLConnWrapper::executeUpdate(const string& act)
 	try {
 		if (act != "") {
 			stmt->execute(act);
-		} 
+		}else {
+			prep_stmt->execute();
+		}
 	} catch (sql::SQLException &e) {
 		manageException(e);
 	}

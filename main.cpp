@@ -45,34 +45,31 @@ int main(int argc, char *argv[])
 	db.connect();
 	db.switchDb("mihao");
 
-#if 0	
 	db.prepare("INSERT INTO active_user(create_time, mdn, imsi, esn) VALUES (?, ?, ?, ?)");
 	string now=currentDateTime();
 	db.setString(1,now);
 	db.setString(2,"13301602770");
 	db.setString(3, "6160761796");
 	db.setString(4, "80D8852E");
-	db.executeQuery();
+	db.executeUpdate();
 
 	db.setString(1,now);
 	db.setString(2,"13301605333");
 	db.setString(3, "0911785312");
 	db.setString(4, "0911785312");
-	db.executeQuery();
+	db.executeUpdate();
 
 	db.setString(1,now);
 	db.setString(2,"13301605371");
 	db.setString(3, "6301743459");
 	db.setString(4, "8094016C");
-	db.executeQuery();
-#endif
+	db.executeUpdate();
 
 	char mdn[]="13301602770";
 	char sql[100];
 	sprintf(sql,"delete from active_user where mdn=%s",mdn);
 	db.executeUpdate(sql);
-	//db.closePrepStmt();
-	db.closeCon();
+	//db.closeCon();
 
 #if 0
 	//db.executeQuery("select * from active_user where mdn=13301602770");
