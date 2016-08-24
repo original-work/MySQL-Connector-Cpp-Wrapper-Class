@@ -15,7 +15,7 @@ For more information see: http://dev.mysql.com/doc/connector-cpp/en/index.html
 
 
 Which execute function should i use in MySQL connector/c++?
-
+===========================================================
 
 
 I need to write a wrapper (based on MySQL Connector/C++) which encapsulate specific SQL statements and provide user friendly interfaces, like: insert(), update(), delete(), select(), etc.
