@@ -92,6 +92,9 @@ void MySQLConnWrapper::connect()
 	try{
 		driver = get_driver_instance();
 		con = driver->connect(host_port, user, password);
+		bool myTrue = true;  
+		/*  因为mysql 存在wait_timeout连接超时所以要这么做*/
+		con->setClientOption("OPT_RECONNECT", &myTrue); 
 	} catch (sql::SQLException &e){
 		manageException(e);
 	}
