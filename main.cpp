@@ -44,7 +44,15 @@ int main(int argc, char *argv[])
 	db.init("127.0.0.1:11008", "root", "fdjkd&wi278^@6DGHfyTF");
 	db.connect();
 	db.switchDb("mihao");
-
+	
+	char buffer [50];
+	sprintf(buffer, "UPDATE active_user SET fd=%d", 11);
+	db.prepare(buffer);
+	db.executeUpdate();
+	db.delete_prepare();
+	
+	
+#if 0
 	db.prepare("INSERT INTO active_user(create_time, mdn, imsi, esn) VALUES (?, ?, ?, ?)");
 	string now=currentDateTime();
 	db.setString(1,now);
@@ -71,7 +79,7 @@ int main(int argc, char *argv[])
 	db.executeUpdate(sql);
 	//db.closeCon();
 
-#if 0
+
 	//db.executeQuery("select * from active_user where mdn=13301602770");
 	db.executeQuery("select * from active_user");
 	db.closeCon();

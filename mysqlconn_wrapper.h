@@ -52,6 +52,7 @@ public:
 	void connect();
 	void switchDb(const string& db_name);
 	void prepare(const string& query);
+	void delete_prepare();
 	void setInt(const int& num, const int& data);
 	void setString(const int& num, const string& data);
 	void executeQuery(const string& query = "");
